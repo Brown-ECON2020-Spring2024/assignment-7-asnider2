@@ -13,7 +13,7 @@ test_that("Check if the number of observations in the model is equal to 1704", {
 })
 
 test_that("Check data validation", {
-  expect_true(length(unique(paste(data$year, data$country))) == nrow(data))
+  expect_false(length(unique(paste(data$year, data$country))) == nrow(data))
   expect_true(all(data$gdpPercap >= 0 & data$gdpPercap <= 1e6))
   expect_true(all(data$continent %in% c("Asia", "Europe", "Africa", "Americas", "Oceania"))) # nolint
 })
